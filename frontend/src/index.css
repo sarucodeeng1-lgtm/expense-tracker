@@ -1,0 +1,349 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6fb;
+    color: #1f2937;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+.app-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 28px;
+}
+
+.app-header {
+    margin-bottom: 28px;
+}
+
+.app-header h1 {
+    font-size: 32px;
+    margin: 0 0 8px;
+    color: #172554;
+}
+
+.app-header p {
+    margin: 0;
+    color: #64748b;
+    font-size: 15px;
+}
+
+.summary-cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-bottom: 24px;
+}
+
+.summary-card {
+    padding: 24px;
+    min-height: 145px;
+    border-radius: 16px;
+    background: white;
+    border: 1px solid #e5eaf3;
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
+}
+
+.summary-card h3 {
+    font-size: 14px;
+    margin: 0 0 14px;
+    color: #64748b;
+}
+
+.summary-card h2 {
+    font-size: 27px;
+    margin: 0 0 10px;
+}
+
+.summary-card p {
+    margin: 0;
+    font-size: 12px;
+    color: #94a3b8;
+}
+
+.balance-card {
+    background: #5967dc;
+    color: white;
+}
+
+.balance-card h3,
+.balance-card p {
+    color: #eef2ff;
+}
+
+.income-card h2 {
+    color: #059669;
+}
+
+.expense-card h2 {
+    color: #ef4444;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 320px minmax(0, 1fr);
+    gap: 22px;
+    align-items: start;
+}
+
+.transaction-form-card,
+.recent-transactions-card {
+    background: white;
+    border: 1px solid #e5eaf3;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
+}
+
+.transaction-form-card h2,
+.recent-transactions-card h2 {
+    font-size: 19px;
+    margin: 0 0 8px;
+    color: #172554;
+}
+
+.transaction-form-card > p,
+.transactions-header p {
+    font-size: 12px;
+    color: #94a3b8;
+    margin: 0 0 22px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    height: 44px;
+    padding: 0 12px;
+    border: 1px solid #dbe2ef;
+    border-radius: 9px;
+    background: white;
+    color: #334155;
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #5967dc;
+    box-shadow: 0 0 0 3px rgba(89, 103, 220, 0.12);
+}
+
+.add-transaction-btn {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 9px;
+    background: #5967dc;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.add-transaction-btn:hover {
+    background: #4855c5;
+}
+
+.add-transaction-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.transactions-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.transaction-count {
+    background: #eef0ff;
+    color: #5967dc;
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-size: 12px;
+}
+
+.transactions-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.transaction-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 0;
+    border-bottom: 1px solid #edf0f6;
+}
+
+.transaction-item:last-child {
+    border-bottom: none;
+}
+
+.transaction-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+.income-icon {
+    background: #dcfce7;
+    color: #059669;
+}
+
+.expense-icon {
+    background: #eef0ff;
+    color: #5967dc;
+}
+
+.transaction-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.transaction-info h3 {
+    font-size: 14px;
+    margin: 0 0 6px;
+    overflow-wrap: anywhere;
+}
+
+.transaction-info p {
+    font-size: 12px;
+    color: #94a3b8;
+    margin: 0;
+    text-transform: capitalize;
+}
+
+.transaction-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+}
+
+.transaction-amount {
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.positive-amount {
+    color: #059669;
+}
+
+.negative-amount {
+    color: #ef4444;
+}
+
+.delete-btn {
+    border: none;
+    background: transparent;
+    color: #64748b;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    color: #ef4444;
+}
+
+.empty-message {
+    color: #94a3b8;
+    font-size: 14px;
+    padding: 24px 0;
+    text-align: center;
+}
+
+.error-message {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    max-width: 400px;
+    background: #fef2f2;
+    color: #b91c1c;
+    border: 1px solid #fecaca;
+    border-radius: 10px;
+    padding: 14px 18px;
+    display: flex;
+    gap: 14px;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    z-index: 1000;
+    font-size: 13px;
+}
+
+.error-message button {
+    border: none;
+    background: transparent;
+    color: #b91c1c;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+@media (max-width: 750px) {
+    .app-container {
+        padding: 18px;
+    }
+
+    .summary-cards {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .summary-card {
+        min-height: auto;
+        padding: 20px;
+    }
+
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 420px) {
+    .app-container {
+        padding: 12px;
+    }
+
+    .app-header h1 {
+        font-size: 27px;
+    }
+
+    .transaction-form-card,
+    .recent-transactions-card {
+        padding: 17px;
+    }
+
+    .transaction-item {
+        gap: 9px;
+    }
+
+    .transaction-amount {
+        font-size: 12px;
+    }
+}
